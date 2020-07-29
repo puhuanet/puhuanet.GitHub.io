@@ -310,19 +310,19 @@ class ZbxReport(ZabbixAPI, ZabbixAPIException):
                                 </head>
                                 <body>
                                     <table>
-                                        {% for gid in graphids %}
-                                            {%- if loop.first -%}
+                                        { % for gid in graphids % }
+                                            { %- if loop.first -% }
                                                 <tr>
-                                            {%- endif %}
+                                            { %- endif % }
                                             <td><img src="cid:{{gid}}.png"></td>
-                                            {% if loop.index0 is odd -%}
+                                            { % if loop.index0 is odd -% }
                                                 </tr>
                                                 <tr> 
-                                            {%- endif -%}
-                                            {%- if loop.last %}
+                                            { %- endif -% }
+                                            { %- if loop.last % }
                                                 </tr>
-                                            {%- endif -%}
-                                        {%- endfor %}
+                                            { %- endif -% }
+                                        { %- endfor % }
                                     </table>
                                 </body>
                             </html>'''
@@ -363,31 +363,4 @@ class ZbxReport(ZabbixAPI, ZabbixAPIException):
             print('%s sendemail failed' % s(self.subject))
             print(e)
 
-```
-
-```
-        template_str = u'''<!DOCTYPE html>
-                            <html>
-                                <head>
-                                    <meta charset="utf-8">
-                                    <title></title>
-                                </head>
-                                <body>
-                                    <table>
-                                        \{\% for gid in graphids \%\}
-                                            \{\%- if loop.first -\%\}
-                                                <tr>
-                                            \{%- endif %}
-                                            <td><img src="cid:{{gid}}.png"></td>
-                                            \{% if loop.index0 is odd -%}
-                                                </tr>
-                                                <tr> 
-                                            \{%- endif -%}
-                                            \{%- if loop.last %}
-                                                </tr>
-                                            \{%- endif -%}
-                                        \{%- endfor %}
-                                    </table>
-                                </body>
-                            </html>'''
 ```

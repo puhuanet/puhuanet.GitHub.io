@@ -302,7 +302,7 @@ class ZbxReport(ZabbixAPI, ZabbixAPIException):
         msg['subject'] = Header(self.subject, 'utf-8')
 
         # 构造超文本
-        template_str = u"""<!DOCTYPE html>
+        template_str = u'''<!DOCTYPE html>
                             <html>
                                 <head>
                                     <meta charset="utf-8">
@@ -325,7 +325,7 @@ class ZbxReport(ZabbixAPI, ZabbixAPIException):
                                         {%- endfor %}
                                     </table>
                                 </body>
-                            </html>"""
+                            </html>'''
         template = Template(template_str)
         render_content = template.render(graphids=graphids)
         html_sub = MIMEText(render_content, 'html', 'utf-8')
@@ -363,4 +363,31 @@ class ZbxReport(ZabbixAPI, ZabbixAPIException):
             print('%s sendemail failed' % s(self.subject))
             print(e)
 
+```
+
+```
+        template_str = u'''<!DOCTYPE html>
+                            <html>
+                                <head>
+                                    <meta charset="utf-8">
+                                    <title></title>
+                                </head>
+                                <body>
+                                    <table>
+                                        \{% for gid in graphids %}
+                                            \{%- if loop.first -%}
+                                                <tr>
+                                            \{%- endif %}
+                                            <td><img src="cid:{{gid}}.png"></td>
+                                            \{% if loop.index0 is odd -%}
+                                                </tr>
+                                                <tr> 
+                                            \{%- endif -%}
+                                            \{%- if loop.last %}
+                                                </tr>
+                                            \{%- endif -%}
+                                        \{%- endfor %}
+                                    </table>
+                                </body>
+                            </html>'''
 ```

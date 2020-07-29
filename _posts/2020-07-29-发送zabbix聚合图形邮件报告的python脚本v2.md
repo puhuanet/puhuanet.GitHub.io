@@ -302,7 +302,7 @@ class ZbxReport(ZabbixAPI, ZabbixAPIException):
         msg['subject'] = Header(self.subject, 'utf-8')
 
         # 构造超文本
-        template_str = u'''<!DOCTYPE html>
+        template_str = u"""<!DOCTYPE html>
                             <html>
                                 <head>
                                     <meta charset="utf-8">
@@ -325,7 +325,7 @@ class ZbxReport(ZabbixAPI, ZabbixAPIException):
                                         {%- endfor %}
                                     </table>
                                 </body>
-                            </html>'''
+                            </html>"""
         template = Template(template_str)
         render_content = template.render(graphids=graphids)
         html_sub = MIMEText(render_content, 'html', 'utf-8')

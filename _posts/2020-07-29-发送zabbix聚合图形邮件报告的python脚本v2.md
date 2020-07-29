@@ -1,5 +1,20 @@
 # 发送zabbix聚合图形邮件报告的python脚本v2
 
+
+## 如何使用
+```
+usage: zabbix_screen.py [-h] [-sids SCREENIDS] [-hids HOSTIDS] [-r RECEIVERS]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -sids SCREENIDS, --screenids SCREENIDS
+                        The Screen IDs
+  -hids HOSTIDS, --hostids HOSTIDS
+                        The Host IDs
+  -r RECEIVERS, --receivers RECEIVERS
+                        The receiver mail address
+```
+
 ## zabbix_screen.py
 ```
 #!/usr/bin/python

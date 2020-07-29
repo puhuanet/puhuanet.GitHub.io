@@ -374,8 +374,8 @@ class ZbxReport(ZabbixAPI, ZabbixAPIException):
                                 </head>
                                 <body>
                                     <table>
-                                        \{% for gid in graphids %}
-                                            \{%- if loop.first -%}
+                                        \{\% for gid in graphids \%\}
+                                            \{\%- if loop.first -\%\}
                                                 <tr>
                                             \{%- endif %}
                                             <td><img src="cid:{{gid}}.png"></td>

@@ -15,7 +15,7 @@ show_wiki_posts_limit: 50
 # from jekyll (read jekyll doc)
 paginate: 5
 paginate_path: "/blog/page:num"
-permalink: /blog/posts/:year:month:day:title:output_ext
+permalink: /blog/posts/:year:month:day-:title:output_ext
 # (boolean) Enable/disable download buttons in sidebar
 show_downloads: false
 # (string) specify git-wiki host. (github or gitlab)

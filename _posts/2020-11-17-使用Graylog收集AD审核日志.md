@@ -194,7 +194,6 @@ DS 访问
         ignore_older: 48h
     ```
 
-    注意： 台北graylog的output.logstash hosts设置为台北graylog服务器ip地址。
 
     
 3. 创建索引集
